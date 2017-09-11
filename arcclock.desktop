@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Simple Arc Clock
+GenericName=Desktop Clock
+Comment=Simple Desktop Clock
+Categories=Utility;
+Exec=arcclock
+Icon=arcclock
