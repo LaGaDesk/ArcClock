@@ -34,6 +34,7 @@ private:
     QString dateColor;
     QString dialColor;
     QString textFont;
+    QString timeFormat;
     int posX;
     int posY;
 

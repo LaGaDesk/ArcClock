@@ -16,8 +16,6 @@ ArcClock::ArcClock(QWidget *parent)
 
     this->readSettings(true);
 
-    textFont = "Open Sans";
-
     if ((posX > 0) || (posY > 0))
         this->move(posX, posY);
 
@@ -50,7 +48,6 @@ void ArcClock::closeEvent(QCloseEvent* event)
 
 void ArcClock::writePosition()
 {
-    qDebug() << "FROM CLOSE EVENT";
     QSettings settings("Phobian", "Simple Arc Clock");
     settings.setValue("posX", (this->frameGeometry().x() < 0) ? 1 : this->frameGeometry().x());
     settings.setValue("posY", (this->frameGeometry().y() < 0) ? 1 : this->frameGeometry().y());
@@ -88,33 +85,30 @@ void ArcClock::paintEvent(QPaintEvent *)
     painter.setPen(Qt::NoPen);
     painter.setBrush(QColor(dialColor));
 
-
-    QFont font(textFont, side/8);
+    QFont font(textFont, side/10);
     QFontMetrics fm(font);
     font.setBold(true);
     painter.setFont(font);
-    QString timeText = time.toString("hh:mm");
+    QString timeText = time.toString(timeFormat);
     QRect rect(0, (side / 2) - (fm.height() / 2), side, side / 2);
     painter.setPen(QColor(timeColor));
     painter.drawText(rect, Qt::AlignHCenter , timeText);
 
-
     if (showDate) {
-        QRect rect2(0, side / 2 + fm.height() / 2.5, side, side / 2);
+        QRect rect2(0, side / 2 + fm.height() / 2, side, side / 2);
         QFont font2(textFont, side/20);
         painter.setFont(font2);
         painter.setPen(QColor(dateColor));
         painter.drawText(rect2, Qt::AlignHCenter, QDate::currentDate().toString(Qt::RFC2822Date));
-        QRect rect3(0, 0, side, (side / 2) - (fm.height() / 2.5));
+        QRect rect3(0, 0, side, (side / 2) - (fm.height() / 2));
         painter.drawText(rect3, Qt::AlignHCenter | Qt::AlignBottom, QDate::currentDate().toString("dddd"));
     }
 
     QPainter painter2(this);
     QPainterPath hourPath;
     painter2.setRenderHint(QPainter::Antialiasing);
-    QRect hourRect(side / 7.3, side / 7.3, side / 1.3, side / 1.3);
+    QRect hourRect(side / 8.7, side / 8.7, side / 1.3, side / 1.3);
     hourPath.arcMoveTo(hourRect,90.0);
-//    hourPath.arcTo(hourRect, 90.0, -330.0);
     int twelve = (time.hour() > 12) ? time.hour() - 12 : time.hour();
     hourPath.arcTo(hourRect, 90.0, -30.0 * twelve - time.minute() / 2);
     QPen hourPen;
@@ -127,10 +121,10 @@ void ArcClock::paintEvent(QPaintEvent *)
     QPainter painter3(this);
     QPainterPath minutePath;
     painter3.setRenderHint(QPainter::Antialiasing);
-    QRect minuteRect(side / 14.5, side / 14.5, side / 1.1, side / 1.1);
+    QRect minuteRect(side / 21, side / 21, side / 1.1, side / 1.1);
     minutePath.arcMoveTo(minuteRect,90.0);
-//    minutePath.arcTo(minuteRect, 90.0, -330.0);
     minutePath.arcTo(minuteRect, 90.0, -6.0 * time.minute());
+//    minutePath.arcTo(minuteRect, 90.0, -330.0);
     QPen minutePen;
     minutePen.setWidth(side/24);
     minutePen.setColor(QColor(minuteColor));
@@ -159,6 +153,8 @@ void ArcClock::initVars()
     settings.setValue("minuteColor", "#77dbdbdb");
     settings.setValue("timeColor", "#FFFFFFFF");
     settings.setValue("dateColor", "#aadbdbdb");
+    settings.setValue("timeFormat", "hh:mm");
+    settings.setValue("textFont", "Sans");
     settings.setValue("posX", 0);
     settings.setValue("posY", 0);
     settings.setValue("Existant", true);
@@ -191,16 +187,18 @@ void ArcClock::readSettings(bool startup)
     minuteColor = settings.value("minuteColor").toString();
     timeColor   = settings.value("timeColor").toString();
     dateColor   = settings.value("dateColor").toString();
+    timeFormat  = settings.value("timeFormat").toString();
+    textFont    = settings.value("textFont").toString();
 }
 
 void ArcClock::onConfig(void)
 {
     Prefs *p = new Prefs(this);
+    connect(p, SIGNAL(updateSettings()), this, SLOT(prefsChanged()));
     p->show();
 }
 
 void ArcClock::prefsChanged()
 {
-    qDebug() << "CHANGED";
     readSettings(false);
 }
