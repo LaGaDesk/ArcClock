@@ -4,6 +4,6 @@ Simple desktop clock that is easy to configure. Left mouse drags the clock aroun
 
 ### Installation
 ```
-sudo ./install/sh
+sudo ./install.sh
 ```
 A menu entry should appear under Utilities.
