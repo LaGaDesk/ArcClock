@@ -5,7 +5,7 @@
 #include "prefs.h"
 
 ArcClock::ArcClock(QWidget *parent)
-    : QWidget(parent, Qt::FramelessWindowHint | Qt::Tool
+    : QWidget(parent, Qt::FramelessWindowHint
               | Qt::WindowStaysOnBottomHint)
 {
 
@@ -13,6 +13,7 @@ ArcClock::ArcClock(QWidget *parent)
     setAttribute(Qt::WA_NoSystemBackground);
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_TransparentForMouseEvents);
+    setAttribute(Qt::WA_X11NetWmWindowTypeDock);
 
     this->readSettings(true);
 
