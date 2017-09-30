@@ -22,7 +22,7 @@ ArcClock::ArcClock(QWidget *parent)
 
     QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
-    timer->start(2000);
+    timer->start(1000);
 
     QAction *quitAction = new QAction(tr("E&xit"), this);
     quitAction->setShortcut(tr("Ctrl+Q"));
@@ -78,6 +78,7 @@ void ArcClock::mouseMoveEvent(QMouseEvent *event)
 void ArcClock::paintEvent(QPaintEvent *)
 {
     int side = qMin(width(), height());
+//    QTime time = QTime( 22, 55 , 10);
     QTime time = QTime::currentTime();
 
     QPainter painter(this);
@@ -86,9 +87,9 @@ void ArcClock::paintEvent(QPaintEvent *)
     painter.setPen(Qt::NoPen);
     painter.setBrush(QColor(dialColor));
 
-    QFont font(textFont, side/10);
+    QFont font(textFont, side/9);
     QFontMetrics fm(font);
-    font.setBold(true);
+//    font.setBold(true);
     painter.setFont(font);
     QString timeText = time.toString(timeFormat);
     QRect rect(0, (side / 2) - (fm.height() / 2), side, side / 2);
@@ -96,12 +97,12 @@ void ArcClock::paintEvent(QPaintEvent *)
     painter.drawText(rect, Qt::AlignHCenter , timeText);
 
     if (showDate) {
-        QRect rect2(0, side / 2 + fm.height() / 2, side, side / 2);
-        QFont font2(textFont, side/20);
+        QRect rect2(0, side / 2 + fm.height() / 2 + 6, side, side / 2);
+        QFont font2(textFont, side/22);
         painter.setFont(font2);
         painter.setPen(QColor(dateColor));
         painter.drawText(rect2, Qt::AlignHCenter, QDate::currentDate().toString(Qt::RFC2822Date));
-        QRect rect3(0, 0, side, (side / 2) - (fm.height() / 2));
+        QRect rect3(0, 0, side, (side / 2) - (fm.height() / 2) - 4);
         painter.drawText(rect3, Qt::AlignHCenter | Qt::AlignBottom, QDate::currentDate().toString("dddd"));
     }
 
@@ -113,7 +114,7 @@ void ArcClock::paintEvent(QPaintEvent *)
     int twelve = (time.hour() > 12) ? time.hour() - 12 : time.hour();
     hourPath.arcTo(hourRect, 90.0, -30.0 * twelve - time.minute() / 2);
     QPen hourPen;
-    hourPen.setWidth(side/24);
+    hourPen.setWidth(side/20);
     hourPen.setColor(QColor(hourColor));
     hourPen.setCapStyle(Qt::RoundCap);
     painter2.setPen(hourPen);
@@ -127,7 +128,7 @@ void ArcClock::paintEvent(QPaintEvent *)
     minutePath.arcTo(minuteRect, 90.0, -6.0 * time.minute());
 //    minutePath.arcTo(minuteRect, 90.0, -330.0);
     QPen minutePen;
-    minutePen.setWidth(side/24);
+    minutePen.setWidth(side/34);
     minutePen.setColor(QColor(minuteColor));
     minutePen.setCapStyle(Qt::RoundCap);
     painter3.setPen(minutePen);
@@ -147,14 +148,14 @@ void ArcClock::initVars()
 {
     QSettings settings("Phobian", "Simple Arc Clock");
 
-    settings.setValue("initWidth", 220);
-    settings.setValue("initHeight", 220);
+    settings.setValue("initWidth", 180);
+    settings.setValue("initHeight", 180);
     settings.setValue("showDate", true);
     settings.setValue("hourColor", "#FFFFFFFF");
     settings.setValue("minuteColor", "#77dbdbdb");
     settings.setValue("timeColor", "#FFFFFFFF");
     settings.setValue("dateColor", "#aadbdbdb");
-    settings.setValue("timeFormat", "hh:mm");
+    settings.setValue("timeFormat", "h:mm");
     settings.setValue("textFont", "Sans");
     settings.setValue("posX", 0);
     settings.setValue("posY", 0);
