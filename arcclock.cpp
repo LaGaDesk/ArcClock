@@ -87,9 +87,9 @@ void ArcClock::paintEvent(QPaintEvent *)
     painter.setPen(Qt::NoPen);
     painter.setBrush(QColor(dialColor));
 
-    QFont font(textFont, side/9);
+    QFont font(textFont, side/11);
     QFontMetrics fm(font);
-//    font.setBold(true);
+    font.setBold(true);
     painter.setFont(font);
     QString timeText = time.toString(timeFormat);
     QRect rect(0, (side / 2) - (fm.height() / 2), side, side / 2);
@@ -97,11 +97,11 @@ void ArcClock::paintEvent(QPaintEvent *)
     painter.drawText(rect, Qt::AlignHCenter , timeText);
 
     if (showDate) {
-        QRect rect2(0, side / 2 + fm.height() / 2 + 6, side, side / 2);
-        QFont font2(textFont, side/22);
+        QRect rect2(0, side / 2 + fm.height() / 2 + 4 , side, side / 2);
+        QFont font2(textFont, side/20);
         painter.setFont(font2);
         painter.setPen(QColor(dateColor));
-        painter.drawText(rect2, Qt::AlignHCenter, QDate::currentDate().toString(Qt::RFC2822Date));
+        painter.drawText(rect2, Qt::AlignHCenter, QDate::currentDate().toString("d MMM yy"));
         QRect rect3(0, 0, side, (side / 2) - (fm.height() / 2) - 4);
         painter.drawText(rect3, Qt::AlignHCenter | Qt::AlignBottom, QDate::currentDate().toString("dddd"));
     }
