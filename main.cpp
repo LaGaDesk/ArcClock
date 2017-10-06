@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     qDebug() << locale;
 
     QTranslator translator;
-    translator.load(QString("arc_") + locale);
+    translator.load(QString("arc_") + locale, ":/ts");
     app.installTranslator(&translator);
 //    return 0;
     ArcClock clock;

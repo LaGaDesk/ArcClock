@@ -50,12 +50,12 @@ Use the right mouse button to open a context menu.</source>
     <message>
         <location filename="prefs.ui" line="39"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Bewerben</translation>
     </message>
     <message>
         <location filename="prefs.ui" line="55"/>
         <source>Time Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeit Text</translation>
     </message>
     <message>
         <location filename="prefs.ui" line="69"/>
@@ -68,17 +68,17 @@ Use the right mouse button to open a context menu.</source>
     <message>
         <location filename="prefs.ui" line="76"/>
         <source>Date Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum Text</translation>
     </message>
     <message>
         <location filename="prefs.ui" line="97"/>
         <source>Hour Arc</source>
-        <translation type="unfinished"></translation>
+        <translation>Stunde</translation>
     </message>
     <message>
         <location filename="prefs.ui" line="118"/>
         <source>Minute Arc</source>
-        <translation type="unfinished"></translation>
+        <translation>Minute</translation>
     </message>
     <message>
         <location filename="prefs.ui" line="151"/>

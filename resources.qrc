@@ -1,1 +1,6 @@
-<RCC/>
+<RCC>
+	<qresource prefix="/">
+	<file>ts/arc_de.qm</file>
+	<file>ts/arc_en.qm</file>
+	</qresource>
+</RCC>

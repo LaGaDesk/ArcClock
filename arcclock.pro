@@ -11,8 +11,8 @@ SOURCES       = arcclock.cpp \
 FORMS += \
     prefs.ui
 
-TRANSLATIONS += arc_en.ts
-TRANSLATIONS += arc_de.ts
+TRANSLATIONS += ts/arc_en.ts
+TRANSLATIONS += ts/arc_de.ts
 
 
 isEmpty(PREFIX) {
@@ -23,14 +23,14 @@ BINDIR = $$PREFIX/bin
 DATADIR = $$PREFIX/share
 
 target.path = $$BINDIR
-translations.path = $$DATADIR/$${TARGET}/translations
-translations.files = arc_de.qm arc_en.pm
+#translations.path = $$DATADIR/$${TARGET}/translations
+#translations.files = arc_de.qm arc_en.pm
 desktop.path = $$DATADIR/applications
 desktop.files = arcclock.desktop
 icons.path = $$DATADIR/icons/hicolor/scalable/apps
 icons.files = arcclock.svg
 
-INSTALLS += target translations desktop icons
+INSTALLS += target desktop icons
 
 RESOURCES += \
     resources.qrc
