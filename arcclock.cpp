@@ -78,8 +78,8 @@ void ArcClock::mouseMoveEvent(QMouseEvent *event)
 void ArcClock::paintEvent(QPaintEvent *)
 {
     int side = qMin(width(), height());
-//    QTime time = QTime( 22, 55 , 10);
-    QTime time = QTime::currentTime();
+    QTime time = QTime( 8, 9 , 10);
+//    QTime time = QTime::currentTime();
 
     QPainter painter(this);
     QPoint pp(side/2, side/2);
@@ -114,7 +114,7 @@ void ArcClock::paintEvent(QPaintEvent *)
     int twelve = (time.hour() > 12) ? time.hour() - 12 : time.hour();
     hourPath.arcTo(hourRect, 90.0, -30.0 * twelve - time.minute() / 2);
     QPen hourPen;
-    hourPen.setWidth(side/20);
+    hourPen.setWidth(side/24);
     hourPen.setColor(QColor(hourColor));
     hourPen.setCapStyle(Qt::RoundCap);
     painter2.setPen(hourPen);
