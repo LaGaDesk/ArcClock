@@ -78,8 +78,8 @@ void ArcClock::mouseMoveEvent(QMouseEvent *event)
 void ArcClock::paintEvent(QPaintEvent *)
 {
     int side = qMin(width(), height());
-    QTime time = QTime( 10, 52, 10);
-//    QTime time = QTime::currentTime();
+//    QTime time = QTime( 10, 52, 10);
+    QTime time = QTime::currentTime();
 
     QPainter painter(this);
     QPoint pp(side/2, side/2);

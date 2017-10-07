@@ -13,6 +13,7 @@ FORMS += \
 
 TRANSLATIONS += ts/arc_en.ts
 TRANSLATIONS += ts/arc_de.ts
+TRANSLATIONS += ts/arc_ua.ts
 
 
 isEmpty(PREFIX) {
