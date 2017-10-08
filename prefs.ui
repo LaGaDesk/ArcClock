@@ -139,32 +139,6 @@
    <property name="geometry">
     <rect>
      <x>260</x>
-     <y>60</y>
-     <width>109</width>
-     <height>52</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QCheckBox" name="cb_showDate">
-      <property name="text">
-       <string>Show Date</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="cb_timeFormat">
-      <property name="text">
-       <string>12 hr Format</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
      <y>120</y>
      <width>225</width>
      <height>58</height>
@@ -183,27 +157,53 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>260</x>
-     <y>20</y>
-     <width>161</width>
-     <height>34</height>
+     <x>261</x>
+     <y>21</y>
+     <width>204</width>
+     <height>90</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
      <widget class="QSpinBox" name="sb_startSize">
       <property name="maximum">
        <number>640</number>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="0" column="1">
      <widget class="QLabel" name="label_5">
+      <property name="minimumSize">
+       <size>
+        <width>136</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="text">
        <string>Startup Size</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="2">
+     <widget class="QCheckBox" name="cb_showDate">
+      <property name="minimumSize">
+       <size>
+        <width>172</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Show Date</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QCheckBox" name="cb_timeFormat">
+      <property name="text">
+       <string>12 hr Format</string>
       </property>
      </widget>
     </item>
