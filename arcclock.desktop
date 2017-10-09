@@ -4,6 +4,6 @@ Type=Application
 Name=Simple Arc Clock
 GenericName=Desktop Clock
 Comment=Simple Desktop Clock
-Categories=Utility;
+Categories=Utility;Clock;
 Exec=arcclock
 Icon=arcclock
