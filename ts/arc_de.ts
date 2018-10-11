@@ -6,7 +6,7 @@
     <message>
         <location filename="../arcclock.cpp" line="27"/>
         <source>E&amp;xit</source>
-        <translation type="unfinished"></translation>
+        <translation>Beenden</translation>
     </message>
     <message>
         <location filename="../arcclock.cpp" line="28"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../arcclock.cpp" line="31"/>
         <source>&amp;Preferences</source>
-        <translation>&amp;präferenzen</translation>
+        <translation>&amp;Einstellungen</translation>
     </message>
     <message>
         <location filename="../arcclock.cpp" line="32"/>
@@ -45,12 +45,12 @@ Use the right mouse button to open a context menu.</source>
     <message>
         <location filename="../prefs.ui" line="26"/>
         <source>Close</source>
-        <translation>Schliessen</translation>
+        <translation>Schließen</translation>
     </message>
     <message>
         <location filename="../prefs.ui" line="39"/>
         <source>Apply</source>
-        <translation>Bewerben</translation>
+        <translation>Übernehmen</translation>
     </message>
     <message>
         <location filename="../prefs.ui" line="55"/>
@@ -73,32 +73,32 @@ Use the right mouse button to open a context menu.</source>
     <message>
         <location filename="../prefs.ui" line="97"/>
         <source>Hour Arc</source>
-        <translation>Stunde</translation>
+        <translation>Stundenring</translation>
     </message>
     <message>
         <location filename="../prefs.ui" line="118"/>
         <source>Minute Arc</source>
-        <translation>Minute</translation>
+        <translation>Minutenring</translation>
     </message>
     <message>
-        <location filename="../prefs.ui" line="151"/>
+        <location filename="../prefs.ui" line="199"/>
         <source>Show Date</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../prefs.ui" line="158"/>
-        <source>12 hr Format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../prefs.ui" line="177"/>
-        <source>Text Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige Datum</translation>
     </message>
     <message>
         <location filename="../prefs.ui" line="206"/>
+        <source>12 hr Format</source>
+        <translation>12 Stunden Format</translation>
+    </message>
+    <message>
+        <location filename="../prefs.ui" line="151"/>
+        <source>Text Font</source>
+        <translation>Schriftart</translation>
+    </message>
+    <message>
+        <location filename="../prefs.ui" line="186"/>
         <source>Startup Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Startgröße</translation>
     </message>
 </context>
 </TS>
