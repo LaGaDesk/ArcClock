@@ -27,7 +27,7 @@
         <location filename="../arcclock.cpp" line="39"/>
         <source>Drag the clock with the left mouse button.
 Use the right mouse button to open a context menu.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verschiebe die Uhr mit gedrückter linker Maustaste. Nutze die rechte Maustaste, um das Kontextmenü zu öffnen.</translation>
     </message>
     <message>
         <location filename="../arcclock.cpp" line="41"/>
