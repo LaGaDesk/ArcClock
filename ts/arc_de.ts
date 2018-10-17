@@ -98,7 +98,7 @@ Use the right mouse button to open a context menu.</source>
     <message>
         <location filename="../prefs.ui" line="186"/>
         <source>Startup Size</source>
-        <translation>Startgröße</translation>
+        <translation>Startgröße (benötigt Neustart)</translation>
     </message>
 </context>
 </TS>
