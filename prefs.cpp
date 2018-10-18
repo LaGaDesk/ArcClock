@@ -18,7 +18,7 @@ Prefs::Prefs(QWidget *parent) :
     m_hourcolor = settings.value("hourColor").toString();
     m_minutecolor = settings.value("minuteColor").toString();
 
-    if (settings.value("timeFormat").toString() == "h:mm ap")
+    if (settings.value("timeFormat").toString() == "hh:mm ap")
         ui->cb_timeFormat->setChecked(true);
 
     m_textfont = settings.value("textFont").toString();
@@ -57,8 +57,8 @@ void Prefs::on_pb_apply_clicked()
     settings.setValue("hourColor", m_hourcolor);
     settings.setValue("minuteColor", m_minutecolor);
 
-    if (ui->cb_timeFormat->isChecked()) settings.setValue("timeFormat", "h:mm ap");
-    else settings.setValue("timeFormat", "h:mm");
+    if (ui->cb_timeFormat->isChecked()) settings.setValue("timeFormat", "hh:mm ap");
+    else settings.setValue("timeFormat", "hh:mm");
 
     settings.setValue("textFont", ui->fcb_time->currentText());
 
