@@ -78,8 +78,8 @@ void ArcClock::mouseMoveEvent(QMouseEvent *event)
 void ArcClock::paintEvent(QPaintEvent *)
 {
     int side = qMin(width(), height());
-    QTime time = QTime( 9, 52, 10);
- //   QTime time = QTime::currentTime();
+ //   QTime time = QTime( 9, 52, 10);
+    QTime time = QTime::currentTime();
 
     QPainter painter(this);
     QPoint pp(side/2, side/2);
@@ -183,15 +183,15 @@ void ArcClock::initVars()
 {
     QSettings settings("Phobian", "Simple Arc Clock");
 
-    settings.setValue("initWidth", 180);
-    settings.setValue("initHeight", 180);
+    settings.setValue("initWidth", 200);
+    settings.setValue("initHeight", 200);
     settings.setValue("showDate", true);
-    settings.setValue("hourColor", "#FFFFFFFF");
-    settings.setValue("minuteColor", "#77dbdbdb");
-    settings.setValue("timeColor", "#FFFFFFFF");
-    settings.setValue("dateColor", "#aadbdbdb");
+    settings.setValue("hourColor", "#46000000");
+    settings.setValue("minuteColor", "#64000000");
+    settings.setValue("timeColor", "#78000000");
+    settings.setValue("dateColor", "#6e000000");
     settings.setValue("timeFormat", "hh:mm");
-    settings.setValue("textFont", "Sans");
+    settings.setValue("textFont", "URW Gothic L");
     settings.setValue("posX", 0);
     settings.setValue("posY", 0);
     settings.setValue("Existant", true);
