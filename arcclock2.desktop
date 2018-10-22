@@ -5,5 +5,5 @@ Name=ArcClock
 GenericName=A Simple Desktop Clock
 Comment=A Simple Desktop Clock
 Categories=Utility;Clock;
-Exec=arcclock
+Exec=arcclock2
 Icon=arcclock
