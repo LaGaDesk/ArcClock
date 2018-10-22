@@ -10,7 +10,7 @@ sudo make install
 ```
 A menu entry should appear under Utilities.
    
-After first start it creates a configuration file in./config/ArcClock/
+After first start it creates a configuration file in./config/ArcClock/.
 If problems occur or after an update it may need to be deleted.
 
 ### Compton (untested)
