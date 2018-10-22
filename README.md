@@ -1,5 +1,6 @@
-# Simple Arc Clock
+# ArcClock
 
+A clone of this clock: https://github.com/phobi4n/Simple-Arc-Clock (Thanks Mark!)
 Simple desktop clock that is easy to configure. Left mouse drags the clock around the desktop, right mouse opens menu.
 ![Screenshot](sac.png)
 ### Installation
