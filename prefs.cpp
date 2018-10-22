@@ -11,7 +11,7 @@ Prefs::Prefs(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QSettings settings("Phobian", "Simple Arc Clock");
+    QSettings settings("ArcClock", "ArcClock");
 
     m_datecolor = settings.value("dateColor").toString();
     m_timecolor = settings.value("timeColor").toString();
@@ -48,7 +48,7 @@ Prefs::~Prefs()
 
 void Prefs::on_pb_apply_clicked()
 {
-    QSettings settings("Phobian", "Simple Arc Clock");
+    QSettings settings("ArcClock", "ArcClock");
     settings.setValue("showDate", ui->cb_showDate->isChecked());
     settings.setValue("initHeight", ui->sb_startSize->value());
     settings.setValue("initWidth", ui->sb_startSize->value());
