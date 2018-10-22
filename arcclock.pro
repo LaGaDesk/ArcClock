@@ -1,6 +1,6 @@
 QT += widgets
 
-TARGET = arcclock
+TARGET = arcclock2
 
 HEADERS       = arcclock.h \
     prefs.h
