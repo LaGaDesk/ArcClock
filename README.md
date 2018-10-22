@@ -8,7 +8,11 @@ qmake
 make
 sudo make install
 ```
-A menu entry should appear under Utilities. After first start it creates a configuration file in./config/ArcClock/
+A menu entry should appear under Utilities.
+   
+After first start it creates a configuration file in./config/ArcClock/
+If problems occur or after an update it may need to be deleted.
+
 ### Compton (untested)
 To avoid shadows edit your compton.conf thus:
 ```
