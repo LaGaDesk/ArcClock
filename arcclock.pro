@@ -27,7 +27,7 @@ target.path = $$BINDIR
 #translations.path = $$DATADIR/$${TARGET}/translations
 #translations.files = arc_de.qm arc_en.pm
 desktop.path = $$DATADIR/applications
-desktop.files = arcclock.desktop
+desktop.files = arcclock2.desktop
 icons.path = $$DATADIR/icons/hicolor/scalable/apps
 icons.files = arcclock.svg
 
