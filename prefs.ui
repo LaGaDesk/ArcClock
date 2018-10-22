@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Simple Arc Clock</string>
+   <string>ArcClock</string>
   </property>
   <widget class="QPushButton" name="pb_close">
    <property name="geometry">

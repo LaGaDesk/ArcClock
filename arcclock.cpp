@@ -38,7 +38,7 @@ ArcClock::ArcClock(QWidget *parent)
     setContextMenuPolicy(Qt::ActionsContextMenu);
     setToolTip(tr("Drag the clock with the left mouse button.\n"
                   "Use the right mouse button to open a context menu."));
-    setWindowTitle(tr("Simple Clock"));
+    setWindowTitle(tr("ArcClock"));
 }
 
 void ArcClock::closeEvent(QCloseEvent* event)
@@ -49,7 +49,7 @@ void ArcClock::closeEvent(QCloseEvent* event)
 
 void ArcClock::writePosition()
 {
-    QSettings settings("Phobian", "Simple Arc Clock");
+    QSettings settings("ArcClock", "ArcClock");
     settings.setValue("posX", (this->frameGeometry().x() < 0) ? 1 : this->frameGeometry().x());
     settings.setValue("posY", (this->frameGeometry().y() < 0) ? 1 : this->frameGeometry().y());
     qApp->exit();
@@ -181,7 +181,7 @@ QSize ArcClock::sizeHint() const
 
 void ArcClock::initVars()
 {
-    QSettings settings("Phobian", "Simple Arc Clock");
+    QSettings settings("ArcClock", "ArcClock");
 
     settings.setValue("initWidth", 200);
     settings.setValue("initHeight", 200);
@@ -199,7 +199,7 @@ void ArcClock::initVars()
 
 void ArcClock::readSettings(bool startup)
 {
-    QSettings settings("Phobian", "Simple Arc Clock");
+    QSettings settings("ArcClock", "ArcClock");
 
     if (!settings.contains("Existant"))
         initVars();
